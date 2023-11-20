@@ -1,4 +1,4 @@
-# Weather App
+# Project: Weather App
 
 Summary:
 Create a weather app where users can search for a location's forecast.
