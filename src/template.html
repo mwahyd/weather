@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
@@ -10,7 +10,34 @@
 
   <body>
     <header>
-      <h1>Weather App</h1>
+      <div class="update"></div>
+
+      <div class="logo">
+        <h1>Weathery</h1>
+        <img src="./assets/logo-no-bg.gif" id="logo-img" loading="lazy" />
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="search" />
+        <span class="search icon"> &#128269;</span>
+      </div>
     </header>
+
+    <main>
+      <div class="content">
+        <div>Location</div>
+        <div>Temp</div>
+        <div>Weather</div>
+      </div>
+
+      <div class="metrics">
+        <div>Real Feel</div>
+        <div>Humidity</div>
+        <div>Rain %</div>
+        <div>Wind</div>
+      </div>
+
+      <div class="forecast"></div>
+    </main>
   </body>
 </html>
