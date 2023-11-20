@@ -1,0 +1,14 @@
+html {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
