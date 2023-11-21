@@ -15,7 +15,7 @@
         <div class="content">
           <div id="location">Poznan</div>
           <div id="temp">1°</div>
-          <img src="./assets/sunny.gif" class="weather-icon" />
+          <img src="./assets/conditions/sunny.gif" class="weather-icon" />
           <div id="temp-var">
             H:<span id="high">2°</span> L:<span id="low">-2°</span>
           </div>
@@ -26,11 +26,39 @@
         </div>
 
         <div class="metrics">
-          <div class="box" id="real-feel">Real Feel</div>
-          <div class="box" id="humidity">Humidity</div>
-          <div class="box" id="rain">Rain %</div>
-          <div class="box" id="wind">Wind</div>
+          <div class="box" id="real-feel">
+            <img src="./assets/icons/rf-icon.gif" class="icon" />
+            <div class="metric">
+              <p class="metric-name">Real Feel</p>
+              <p class="metric-value">-2°</p>
+            </div>
+          </div>
+
+          <div class="box" id="humidity">
+            <img src="./assets/icons/humi-icon.gif" class="icon" />
+            <div class="metric">
+              <p class="metric-name">Humidity</p>
+              <p class="metric-value">10%</p>
+            </div>
+          </div>
+
+          <div class="box" id="rain">
+            <img src="./assets/icons/rain-icon.gif" class="icon" />
+            <div class="metric">
+              <p class="metric-name">Rain %</p>
+              <p class="metric-value">67%</p>
+            </div>
+          </div>
+
+          <div class="box" id="wind">
+            <img src="./assets/icons/wind-icon.gif" class="icon" />
+            <div class="metric">
+              <p class="metric-name">Wind Speed</p>
+              <p class="metric-value">5.2 km/h</p>
+            </div>
+          </div>
         </div>
+
         <div class="forecast"></div>
       </main>
     </div>
