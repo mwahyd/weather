@@ -74,6 +74,8 @@ input#search {
   max-width: 180px;
 }
 
+/* metric boxes */
+
 .content {
   font-size: 2rem;
   font-weight: 600;
@@ -87,9 +89,8 @@ input#search {
 
 .metrics {
   margin-top: 2rem;
-  /* border: 2px solid yellow; */
   display: flex;
-  justify-content: space-evenly;
+  gap: 1rem;
 
   font-size: 1.2rem;
   text-align: center;
@@ -97,8 +98,29 @@ input#search {
 }
 
 .box {
-  background-color: rgba(0, 0, 0, 0.2);
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  width: 7rem;
-  height: 7rem;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.metric {
+  text-align: left;
+  margin-left: 5px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+.metric-value {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.metric-name {
+  font-size: 1.2rem;
 }
