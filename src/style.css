@@ -19,6 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .container {
@@ -45,17 +46,29 @@ body {
   background-color: var(--bg-colour, #f9cdcc);
 }
 
-/* header */
-
-header {
-  border: 2px solid red;
-  display: flex;
+.weather-icon {
+  /* border: 2px solid red; */
+  position: relative;
+  object-fit: cover;
+  left: -0.5rem;
+  width: 180px;
+  height: 180px;
+  margin: -5rem auto;
 }
 
-main {
-  border: 2px solid blue;
-}
+/* top section */
 
 .search.icon {
   font-size: 2rem;
+}
+
+.content {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+}
+
+#temp {
+  font-size: 4rem;
 }
