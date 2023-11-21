@@ -9,35 +9,45 @@
   </head>
 
   <body>
-    <header>
-      <div class="update"></div>
+    <div class="overlay"></div>
+    <div class="container">
+      <!-- <header>
+        <div class="update">
+          <p id="date">Date: <span></span></p>
+          <p id="time">Time: <span></span></p>
+          <button id="units">°C / °F</button>
+        </div>
+        <div class="logo">
+          <img src="./assets/logo-no-bg.gif" id="logo-img" loading="lazy" />
+          <h1>Weathery</h1>
+        </div>
+      </header> -->
+      <!-- <div class="condition">
+        <img src="./assets/sunny.gif" class="weather-icon" />
+        <p id="weather">Sunny</p>
+      </div> -->
+      <main>
+        <div class="content">
+          <div id="location">Poznan</div>
+          <div id="temp">1°</div>
+          <img src="./assets/sunny.gif" class="weather-icon" />
+          <div id="temp-var">
+            H:<span id="high">2°</span> L:<span id="low">-2°</span>
+          </div>
+          <div class="search-box">
+            <input type="text" id="search" />
+            <span class="search icon"> &#128269;</span>
+          </div>
+        </div>
 
-      <div class="logo">
-        <h1>Weathery</h1>
-        <img src="./assets/logo-no-bg.gif" id="logo-img" loading="lazy" />
-      </div>
-
-      <div class="search-box">
-        <input type="text" id="search" />
-        <span class="search icon"> &#128269;</span>
-      </div>
-    </header>
-
-    <main>
-      <div class="content">
-        <div>Location</div>
-        <div>Temp</div>
-        <div>Weather</div>
-      </div>
-
-      <div class="metrics">
-        <div>Real Feel</div>
-        <div>Humidity</div>
-        <div>Rain %</div>
-        <div>Wind</div>
-      </div>
-
-      <div class="forecast"></div>
-    </main>
+        <div class="metrics">
+          <div class="box" id="real-feel">Real Feel</div>
+          <div class="box" id="humidity">Humidity</div>
+          <div class="box" id="rain">Rain %</div>
+          <div class="box" id="wind">Wind</div>
+        </div>
+        <div class="forecast"></div>
+      </main>
+    </div>
   </body>
 </html>
