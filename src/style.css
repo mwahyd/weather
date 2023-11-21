@@ -84,3 +84,21 @@ input#search {
 #temp {
   font-size: 4rem;
 }
+
+.metrics {
+  margin-top: 2rem;
+  /* border: 2px solid yellow; */
+  display: flex;
+  justify-content: space-evenly;
+
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.box {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 7rem;
+  height: 7rem;
+}
