@@ -23,19 +23,31 @@ body {
 }
 
 .container {
-  z-index: 3;
+  z-index: 1;
   flex-grow: 1;
 
   border: 4px solid #e97278;
   border-radius: 1.5rem;
   background-color: #f3a1a0;
-  background-image: url(./assets/tree-bg.gif);
-  background-position: 45% 20px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 
   padding: 20px;
   max-width: 500px;
   min-height: 500px;
+  position: relative;
+}
+
+#background {
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/tree-bg.gif);
+  filter: blur(2.5px);
+  background-position: 45% 30px;
+  z-index: -1;
 }
 
 .overlay {
@@ -60,6 +72,7 @@ body {
 
 .search.icon {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 input#search {
@@ -84,24 +97,34 @@ input#search {
 }
 
 #temp {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 
 .metrics {
-  margin-top: 2rem;
+  margin: 0.5rem 0;
   display: flex;
   gap: 1rem;
+}
 
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 5px;
+/* buttons and metrics */
+.box,
+.btn {
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* background-color: rgba(194, 107, 131, 0.6); */
+  /* background-color: rgba(123, 147, 255, 0.6); */
+  /* background-color: rgba(203, 160, 243, 0.2); */
+  /* background-color: rgba(237, 115, 115, 0.5); */
+  background-color: rgba(161, 241, 242, 0.3);
+  border-radius: 10px;
+  padding: 2px;
+  /* color: black; */
 }
 
 .box {
   flex: 1;
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  padding: 2px;
+  padding: 2px; */
   display: flex;
   align-items: center;
 }
