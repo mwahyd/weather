@@ -108,7 +108,8 @@ input#search {
 
 /* buttons and metrics */
 .box,
-.btn {
+.btn,
+.group {
   /* background-color: rgba(0, 0, 0, 0.3); */
   /* background-color: rgba(194, 107, 131, 0.6); */
   /* background-color: rgba(123, 147, 255, 0.6); */
@@ -144,7 +145,8 @@ input#search {
   font-weight: 900;
 }
 
-.metric-name {
+.metric-name,
+.btn {
   font-size: 1.2rem;
 }
 
@@ -163,8 +165,10 @@ input#search {
 
 .group {
   flex: 1;
-  border: 2px solid rebeccapurple;
+  /* border: 2px solid rebeccapurple; */
   font-size: 1.3rem;
+  padding: 3px 1rem;
+  margin-right: 1rem;
 }
 
 .time {
@@ -174,7 +178,6 @@ input#search {
 .btn {
   padding: 3px 5px;
   color: inherit;
-  font-size: 1.2rem;
   font-weight: 700;
   border: 0;
   outline: 2px solid rgba(161, 241, 242, 0.4);
