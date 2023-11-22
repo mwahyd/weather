@@ -147,3 +147,36 @@ input#search {
 .metric-name {
   font-size: 1.2rem;
 }
+
+/* forecast display */
+
+.forecast-display,
+.metrics {
+  padding: 5px;
+  /* border: 2px solid yellow; */
+}
+
+.forecast {
+  /* border: 2px solid green; */
+  display: flex;
+}
+
+.group {
+  flex: 1;
+  border: 2px solid rebeccapurple;
+  font-size: 1.3rem;
+}
+
+.time {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 3px 5px;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 0;
+  outline: 2px solid rgba(161, 241, 242, 0.4);
+  margin-right: 0.5rem;
+}
