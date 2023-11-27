@@ -14,6 +14,7 @@ function _getData(location) {
   console.log(location);
 
   const URL = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`;
+
   // attempt to use location provided to fetch data,
   fetch(URL)
     .then((response) => response.json())
@@ -21,10 +22,12 @@ function _getData(location) {
       console.log(data);
       // if failed ... publish error
       if (data["error"]) {
-        console.log(data["error"]["message"]);
-        Pubsub.publish("locationError", data["error"]["message"]);
+        Pubsub.publish("locationStatus", "error");
+        return;
       }
       // if success ... publish data
+      Pubsub.publish("locationData", data);
+      Pubsub.publish("locationStatus", "success");
     })
     .catch((error) => console.log(error.message));
 }
