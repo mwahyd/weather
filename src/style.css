@@ -87,6 +87,16 @@ input#search {
   max-width: 180px;
 }
 
+.error {
+  position: absolute;
+  top: 51.5%;
+  right: 2rem;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3d53b3;
+}
+
 /* metric boxes */
 
 .content {
