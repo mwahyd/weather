@@ -1,6 +1,11 @@
 import Pubsub from "./pubsub.js";
 
 export default function DOM() {
+  //listeners
+  const _listeners = () => {
+    Pubsub.subscribe("locationStatus", _locationStatus);
+  };
+
   // cache DOM
   const doc = document.querySelector("[data-container]");
 
@@ -10,17 +15,27 @@ export default function DOM() {
     searchBtn.addEventListener("click", _getInput);
   };
 
-  // render
-
   // handler functions
-  const _getInput = (event) => {
+  const _getInput = () => {
     const searchInput = doc.querySelector("#search");
     if (searchInput.value.trim().toLowerCase() === "") {
       searchInput.value = "";
       return;
     }
-    console.log(searchInput.value);
+    Pubsub.publish("locationEntered", searchInput.value.trim().toLowerCase());
+    searchInput.value = "";
   };
+
+  // support functions
+  const _locationStatus = (status) => {
+    const errorDiv = doc.querySelector("[data-error]");
+    status === "error"
+      ? (errorDiv.textContent = `\u2022 Location Error`)
+      : (errorDiv.textContent = "");
+  };
+
+  // internal calls
+  _listeners();
 
   return {
     getLocation,
