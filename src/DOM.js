@@ -15,6 +15,10 @@ export default function DOM() {
   // handler functions
   const _getInput = (event) => {
     const searchInput = doc.querySelector("#search");
+    if (searchInput.value.trim().toLowerCase() === "") {
+      searchInput.value = "";
+      return;
+    }
     console.log(searchInput.value);
   };
 
