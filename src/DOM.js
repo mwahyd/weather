@@ -57,6 +57,8 @@ export default function DOM() {
     const tempL = doc.querySelector("#low");
     const rainProb = doc.querySelector("#chance-rain");
 
+    _setBackground(data);
+
     location.textContent = data["location"]["name"];
     temp.textContent = `${Math.floor(data["current"]["temp_c"])}°`;
     rFeel.textContent = `${Math.floor(data["current"]["feelslike_c"])}°`;
@@ -71,6 +73,33 @@ export default function DOM() {
     tempL.textContent = `${Math.floor(
       data["forecast"]["forecastday"][0]["day"]["mintemp_c"]
     )}°`;
+  };
+
+  const _setBackground = (data) => {
+    const background = doc.querySelector("[data-background]");
+    const root = document.documentElement;
+    const isDay = data["current"]["is_day"];
+    console.log(isDay);
+    switch (isDay) {
+      case 1: // day
+        _setDayState(root, background);
+        break;
+      case 0: // night
+        _setNightState(root, background);
+        break;
+    }
+  };
+
+  const _setDayState = (root, bg) => {
+    bg.style.backgroundImage = "url(./assets/backgrounds/day_hill.gif)";
+    root.style.setProperty("--search-colour", "#3d53b3");
+    root.style.setProperty("--error-colour", "#0008ff");
+  };
+
+  const _setNightState = (root, bg) => {
+    bg.style.backgroundImage = "url(./assets/backgrounds/night_hill.gif)";
+    root.style.setProperty("--search-colour", "#FA9F05");
+    root.style.setProperty("--error-colour", "#D6B16F");
   };
 
   const _getCondition = () => {
