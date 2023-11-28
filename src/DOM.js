@@ -95,8 +95,8 @@ export default function DOM() {
     root.style.setProperty("--search-colour", "#3d53b3");
     root.style.setProperty("--error-colour", "#0008ff");
     root.style.setProperty("--overlay", "#C9BA9E");
-    root.style.setProperty("--border", "#B3B278");
-    root.style.setProperty("--background", "#B3B278");
+    root.style.setProperty("--border", "#9C7F62");
+    root.style.setProperty("--background", "#9C7F62");
   };
 
   const _setNightState = (root, bg) => {
