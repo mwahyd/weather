@@ -104,8 +104,8 @@ export default function DOM() {
     root.style.setProperty("--search-colour", "#FA9F05");
     root.style.setProperty("--error-colour", "#D6B16F");
     root.style.setProperty("--overlay", "#112830");
-    root.style.setProperty("--border", "#073359");
-    root.style.setProperty("--background", "#073359");
+    root.style.setProperty("--border", "#345166");
+    root.style.setProperty("--background", "#345166");
   };
 
   // const _getCondition = () => {
