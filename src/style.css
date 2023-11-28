@@ -1,3 +1,12 @@
+:root {
+  --_background: var(--background, black);
+  --_border: var(--border, black);
+  --_font-colour: var(--colour, white);
+  --_overlay: var(--overlay, rgb(48, 48, 48));
+  --_search-colour: var(--search-colour, #3d53b3);
+  --_error-colour: var(--error-colour, #0008ff);
+}
+
 html {
   box-sizing: border-box;
   font-family: system-ui, sans-serif;
@@ -19,16 +28,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #345166;
+  color: var(--_font-colour);
 }
 
 .container {
   z-index: 1;
   flex-grow: 1;
 
-  border: 4px solid #e97278;
+  border: 4px solid var(--_border);
   border-radius: 1.5rem;
-  background-color: #f3a1a0;
+  background-color: var(--_background);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 
   padding: 20px;
@@ -44,9 +53,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./assets/tree-bg.gif);
-  filter: blur(2.5px);
-  background-position: 45% 39px;
+  background-position: 45% 0px;
   z-index: -1;
 }
 
@@ -55,7 +62,7 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-colour, #f9cdcc);
+  background-color: var(--_overlay);
 }
 
 .weather-icon {
@@ -88,7 +95,7 @@ input#search {
   border: 0;
   outline: 0;
   border-bottom: 2px solid white;
-  color: #3d53b3;
+  color: var(--_search-colour);
   font-size: 1.8rem;
   font-weight: 800;
   padding: 0.5rem 1rem;
@@ -98,11 +105,11 @@ input#search {
 .error {
   position: absolute;
   top: 56%;
-  right: 40%;
+  right: 38%;
 
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(0, 8, 255);
+  color: var(--_error-colour);
 }
 
 /* metric boxes */
@@ -133,12 +140,7 @@ input#search {
 .box,
 .btn,
 .group {
-  /* background-color: rgba(0, 0, 0, 0.3); */
-  /* background-color: rgba(194, 107, 131, 0.6); */
-  /* background-color: rgba(123, 147, 255, 0.6); */
-  /* background-color: rgba(203, 160, 243, 0.2); */
-  /* background-color: rgba(237, 115, 115, 0.5); */
-  background-color: rgba(161, 241, 242, 0.2);
+  background-color: rgba(52, 81, 101, 0.6);
   border-radius: 10px;
   padding: 2px;
   /* color: black; */
