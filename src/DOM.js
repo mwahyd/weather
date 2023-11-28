@@ -38,7 +38,7 @@ export default function DOM() {
   const _locationStatus = (status) => {
     const errorDiv = doc.querySelector("[data-error]");
     status === "error"
-      ? (errorDiv.textContent = `\u2022 Location Error!`)
+      ? (errorDiv.textContent = `\u2022 Location not found!`)
       : (errorDiv.textContent = "");
   };
 
@@ -94,17 +94,23 @@ export default function DOM() {
     bg.style.backgroundImage = "url(./assets/backgrounds/day_hill.gif)";
     root.style.setProperty("--search-colour", "#3d53b3");
     root.style.setProperty("--error-colour", "#0008ff");
+    root.style.setProperty("--overlay", "#C9BA9E");
+    root.style.setProperty("--border", "#B3B278");
+    root.style.setProperty("--background", "#B3B278");
   };
 
   const _setNightState = (root, bg) => {
     bg.style.backgroundImage = "url(./assets/backgrounds/night_hill.gif)";
     root.style.setProperty("--search-colour", "#FA9F05");
     root.style.setProperty("--error-colour", "#D6B16F");
+    root.style.setProperty("--overlay", "#112830");
+    root.style.setProperty("--border", "#073359");
+    root.style.setProperty("--background", "#073359");
   };
 
-  const _getCondition = () => {
-    // {light_rain: icon}
-  };
+  // const _getCondition = () => {
+  //   // {light_rain: icon}
+  // };
 
   // internal calls
   _listeners();
