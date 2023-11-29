@@ -11,16 +11,19 @@
   <body>
     <div class="overlay"></div>
     <div class="container" data-container>
-      <div id="background"></div>
+      <div id="background" data-background></div>
       <main>
         <div class="content">
-          <img src="./assets/conditions/rain-heavy.gif" class="weather-icon" />
+          <!-- src="./assets/conditions/rain-heavy.gif" -->
+          <img class="weather-icon" data-weather-icon />
+          <div id="weather-text"></div>
           <div id="temp">1°</div>
-          <div id="location">Poznan</div>
-          <!-- <div id="temp-var">
+          <div id="temp-var">
             H:<span id="high">2°</span> L:<span id="low">-2°</span>
-            <div class="error" data-error></div>
-          </div> -->
+          </div>
+          <div id="location">London</div>
+          <div id="sun" data-sun></div>
+          <div class="error" data-error></div>
 
           <div class="search-box">
             <input type="text" id="search" />
@@ -34,7 +37,7 @@
             <img src="./assets/icons/rf-icon.gif" class="icon" />
             <div class="metric">
               <p class="metric-name">Real Feel</p>
-              <p class="metric-value">-2°</p>
+              <p class="metric-value" id="rfeel">1°</p>
             </div>
           </div>
 
@@ -42,7 +45,7 @@
             <img src="./assets/icons/humi-icon.gif" class="icon" />
             <div class="metric">
               <p class="metric-name">Humidity</p>
-              <p class="metric-value">10%</p>
+              <p class="metric-value" id="humi">1.1%</p>
             </div>
           </div>
 
@@ -50,7 +53,7 @@
             <img src="./assets/icons/rain-icon.gif" class="icon" />
             <div class="metric">
               <p class="metric-name">Rain %</p>
-              <p class="metric-value">67%</p>
+              <p class="metric-value" id="chance-rain">1.1%</p>
             </div>
           </div>
 
@@ -58,7 +61,7 @@
             <img src="./assets/icons/wind-icon.gif" class="icon" />
             <div class="metric">
               <p class="metric-name">Wind Speed</p>
-              <p class="metric-value">5.2 km/h</p>
+              <p class="metric-value" id="wind-sp">1.1 km/h</p>
             </div>
           </div>
         </div>
