@@ -44,13 +44,13 @@ export default function DOM() {
 
   const _updateDOM = (data) => {
     console.log(data);
-    const location = doc.querySelector("#location");
+    // const location = doc.querySelector("#location");
 
     // current object
-    const temp = doc.querySelector("#temp");
-    const rFeel = doc.querySelector("#rfeel");
-    const humi = doc.querySelector("#humi");
-    const windSp = doc.querySelector("#wind-sp");
+    // const temp = doc.querySelector("#temp");
+    // const rFeel = doc.querySelector("#rfeel");
+    // const humi = doc.querySelector("#humi");
+    // const windSp = doc.querySelector("#wind-sp");
 
     // forecast object
     const tempH = doc.querySelector("#high");
@@ -59,12 +59,13 @@ export default function DOM() {
 
     _setBackground(data);
     _setCondition(data);
+    _setLocationConditions(data);
 
-    location.textContent = data["location"]["name"];
-    temp.textContent = `${Math.floor(data["current"]["temp_c"])}°`;
-    rFeel.textContent = `${Math.floor(data["current"]["feelslike_c"])}°`;
-    humi.textContent = `${data["current"]["humidity"]}%`;
-    windSp.textContent = `${data["current"]["wind_kph"]} km/h`;
+    // location.textContent = data["location"]["name"];
+    // temp.textContent = `${Math.floor(data["current"]["temp_c"])}°`;
+    // rFeel.textContent = `${Math.floor(data["current"]["feelslike_c"])}°`;
+    // humi.textContent = `${data["current"]["humidity"]}%`;
+    // windSp.textContent = `${data["current"]["wind_kph"]} km/h`;
 
     rainProb.textContent = `${data["forecast"]["forecastday"][0]["day"]["daily_chance_of_rain"]}%`;
     console.log(rainProb);
@@ -129,12 +130,25 @@ export default function DOM() {
   };
 
   const _setCondition = (data) => {
-    console.log("hello");
     const weatherIcon = doc.querySelector("[data-weather-icon]");
     const weatherText = doc.querySelector("#weather-text");
 
     weatherIcon.src = data["current"]["condition"]["icon"];
     weatherText.textContent = data["current"]["condition"]["text"];
+  };
+
+  const _setLocationConditions = (data) => {
+    const location = doc.querySelector("#location");
+    const temp = doc.querySelector("#temp");
+    const rFeel = doc.querySelector("#rfeel");
+    const humi = doc.querySelector("#humi");
+    const windSp = doc.querySelector("#wind-sp");
+
+    location.textContent = data["location"]["name"];
+    temp.textContent = `${Math.floor(data["current"]["temp_c"])}°`;
+    rFeel.textContent = `${Math.floor(data["current"]["feelslike_c"])}°`;
+    humi.textContent = `${data["current"]["humidity"]}%`;
+    windSp.textContent = `${data["current"]["wind_kph"]} km/h`;
   };
 
   // internal calls
