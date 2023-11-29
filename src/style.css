@@ -65,24 +65,15 @@ body {
   background-color: var(--_overlay);
 }
 
-.weather-icon {
+#weather-text {
   /* border: 2px solid red; */
-  position: relative;
-  object-fit: cover;
-  left: -0.5rem;
-  width: 180px;
-  height: 180px;
-  margin: -5rem auto;
-
-  z-index: 0;
+  font-size: 1.8rem;
+  margin-top: -1.5rem;
 }
 
-/* top section */
-
 .search-box {
-  /* border: 2px solid red; */
-  margin-top: -0.5rem;
-  margin-bottom: 2rem;
+  margin: -0.5rem auto 2rem 12rem;
+  width: fit-content;
 }
 
 .search.icon {
@@ -105,7 +96,7 @@ input#search {
 .error {
   position: absolute;
   top: 56%;
-  right: 38%;
+  right: 35%;
 
   font-size: 1.5rem;
   font-weight: bold;
@@ -116,17 +107,24 @@ input#search {
 
 .content {
   /* border: 2px solid red; */
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 600;
   padding: 1rem;
   text-align: center;
 }
 
+#temp-var,
+#sun {
+  font-size: 1.3rem;
+}
+
 #temp-var {
-  font-size: 1.5rem;
+  /* border: 2px solid red; */
+  margin-top: -1.5rem;
 }
 
 #temp {
+  /* border: 2px solid orange; */
   font-size: 5rem;
 }
 
@@ -139,8 +137,10 @@ input#search {
 /* buttons and metrics */
 .box,
 .btn,
-.group {
+.group,
+.img {
   background-color: rgba(52, 81, 101, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 2px;
   /* color: black; */
