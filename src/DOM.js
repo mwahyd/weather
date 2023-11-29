@@ -58,6 +58,7 @@ export default function DOM() {
     const rainProb = doc.querySelector("#chance-rain");
 
     _setBackground(data);
+    _setCondition(data);
 
     location.textContent = data["location"]["name"];
     temp.textContent = `${Math.floor(data["current"]["temp_c"])}°`;
@@ -77,40 +78,55 @@ export default function DOM() {
 
   const _setBackground = (data) => {
     const background = doc.querySelector("[data-background]");
+    const sunInfo = doc.querySelector("[data-sun]");
     const root = document.documentElement;
+    const sunImg = document.createElement("img");
+    sunImg.classList.add("icon");
+
     const isDay = data["current"]["is_day"];
     console.log(isDay);
     switch (isDay) {
       case 1: // day
-        _setDayState(root, background);
+        _setDayState(root, background, sunInfo, sunImg, data);
         break;
       case 0: // night
-        _setNightState(root, background);
+        _setNightState(root, background, sunInfo, sunImg, data);
         break;
     }
   };
 
-  const _setDayState = (root, bg) => {
+  const _setDayState = (root, bg, sunInfo, sunImg, data) => {
+    sunInfo.innerHTML = "";
     bg.style.backgroundImage = "url(./assets/backgrounds/day_hill.gif)";
     root.style.setProperty("--search-colour", "#3d53b3");
     root.style.setProperty("--error-colour", "#0008ff");
     root.style.setProperty("--overlay", "#C9BA9E");
     root.style.setProperty("--border", "#9C7F62");
     root.style.setProperty("--background", "#9C7F62");
+    sunImg.src = "./assets/icons/sunset-icon.gif";
+    const text = document.createTextNode(
+      data["forecast"]["forecastday"][0]["astro"]["sunset"]
+    );
+    sunInfo.appendChild(sunImg);
+    sunInfo.appendChild(text);
   };
 
-  const _setNightState = (root, bg) => {
+  const _setNightState = (root, bg, sunInfo, sunImg, data) => {
+    sunInfo.innerHTML = "";
     bg.style.backgroundImage = "url(./assets/backgrounds/night_hill.gif)";
     root.style.setProperty("--search-colour", "#FA9F05");
     root.style.setProperty("--error-colour", "#D6B16F");
     root.style.setProperty("--overlay", "#112830");
     root.style.setProperty("--border", "#345166");
     root.style.setProperty("--background", "#345166");
+    sunImg.src = "./assets/icons/sunrise-icon.gif";
+    const text = document.createTextNode(
+      data["forecast"]["forecastday"][0]["astro"]["sunrise"]
+    );
+    sunImg.classList.add("img");
+    sunInfo.appendChild(sunImg);
+    sunInfo.appendChild(text);
   };
-
-  // const _getCondition = () => {
-  //   // {light_rain: icon}
-  // };
 
   // internal calls
   _listeners();
