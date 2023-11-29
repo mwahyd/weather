@@ -44,38 +44,10 @@ export default function DOM() {
 
   const _updateDOM = (data) => {
     console.log(data);
-    // const location = doc.querySelector("#location");
-
-    // current object
-    // const temp = doc.querySelector("#temp");
-    // const rFeel = doc.querySelector("#rfeel");
-    // const humi = doc.querySelector("#humi");
-    // const windSp = doc.querySelector("#wind-sp");
-
-    // forecast object
-    // const tempH = doc.querySelector("#high");
-    // const tempL = doc.querySelector("#low");
-    // const rainProb = doc.querySelector("#chance-rain");
-
     _setBackground(data);
     _setCondition(data);
     _setLocationConditions(data);
     _setForecastConditions(data);
-
-    // location.textContent = data["location"]["name"];
-    // temp.textContent = `${Math.floor(data["current"]["temp_c"])}°`;
-    // rFeel.textContent = `${Math.floor(data["current"]["feelslike_c"])}°`;
-    // humi.textContent = `${data["current"]["humidity"]}%`;
-    // windSp.textContent = `${data["current"]["wind_kph"]} km/h`;
-
-    // rainProb.textContent = `${data["forecast"]["forecastday"][0]["day"]["daily_chance_of_rain"]}%`;
-    // console.log(rainProb);
-    // tempH.textContent = `${Math.floor(
-    //   data["forecast"]["forecastday"][0]["day"]["maxtemp_c"]
-    // )}°`;
-    // tempL.textContent = `${Math.floor(
-    //   data["forecast"]["forecastday"][0]["day"]["mintemp_c"]
-    // )}°`;
   };
 
   const _setBackground = (data) => {
@@ -158,7 +130,6 @@ export default function DOM() {
     const rainProb = doc.querySelector("#chance-rain");
 
     rainProb.textContent = `${data["forecast"]["forecastday"][0]["day"]["daily_chance_of_rain"]}%`;
-    console.log(rainProb);
     tempH.textContent = `${Math.floor(
       data["forecast"]["forecastday"][0]["day"]["maxtemp_c"]
     )}°`;
