@@ -17,9 +17,14 @@ export default function DOM() {
 
     const searchBtn = doc.querySelector("[data-search-btn]");
     searchBtn.addEventListener("click", _getInput);
+    window.addEventListener("keydown", _registerEnter);
   };
 
   // handler functions
+  const _registerEnter = (event) => {
+    if (event.key === "Enter") _getInput();
+  };
+
   const _getInput = () => {
     const searchInput = doc.querySelector("#search");
     if (searchInput.value.trim().toLowerCase() === "") {
