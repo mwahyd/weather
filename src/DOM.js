@@ -48,11 +48,11 @@ export default function DOM() {
   };
 
   const _updateDOM = (data) => {
-    console.log(data);
     _setBackground(data);
     _setCondition(data);
     _setLocationConditions(data);
     _setForecastConditions(data);
+    _setForecastDays(data);
   };
 
   const _setBackground = (data) => {
@@ -141,6 +141,40 @@ export default function DOM() {
     tempL.textContent = `${Math.floor(
       data["forecast"]["forecastday"][0]["day"]["mintemp_c"]
     )}°`;
+  };
+
+  const _setForecastDays = (data) => {
+    const forecast = doc.querySelector("[data-forecast]");
+    forecast.innerHTML = "";
+    const today = new Date().getDate();
+
+    data["forecast"]["forecastday"].forEach((array) => {
+      const date = new Date(array["date"]);
+      if (date.getDate() === today) return;
+
+      const options = { weekday: "long" };
+      const dayWeek = date.toLocaleDateString("en-GB", options);
+
+      console.log(array);
+      console.log(dayWeek);
+
+      const group = document.createElement("div");
+      const day = document.createElement("p");
+      const tempH = document.createElement("p");
+      const tempL = document.createElement("p");
+      const condition = document.createElement("img");
+
+      day.textContent = dayWeek;
+      tempH.textContent = `H: ${Math.floor(array["day"]["maxtemp_c"])}°`;
+      tempL.textContent = `L: ${Math.floor(array["day"]["mintemp_c"])}°`;
+      condition.src = array["day"]["condition"]["icon"];
+      condition.classList.add("forecast-img");
+
+      day.classList.add("day");
+      group.classList.add("group");
+      group.append(day, tempH, tempL, condition);
+      forecast.appendChild(group);
+    });
   };
 
   // internal calls
