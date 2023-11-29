@@ -194,6 +194,7 @@ input#search {
   font-size: 1.3rem;
   padding: 3px 1rem;
   margin-right: 1rem;
+  position: relative;
 }
 
 .time {
@@ -207,4 +208,18 @@ input#search {
   border: 0;
   outline: 2px solid rgba(161, 241, 242, 0.4);
   margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.forecast-img {
+  position: absolute;
+  /* border: 2px solid red; */
+  transform: scale(0.5);
+  top: 1rem;
+  right: 0;
+}
+
+.day {
+  font-size: 1.4rem;
+  font-weight: bold;
 }
