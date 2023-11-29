@@ -128,6 +128,15 @@ export default function DOM() {
     sunInfo.appendChild(text);
   };
 
+  const _setCondition = (data) => {
+    console.log("hello");
+    const weatherIcon = doc.querySelector("[data-weather-icon]");
+    const weatherText = doc.querySelector("#weather-text");
+
+    weatherIcon.src = data["current"]["condition"]["icon"];
+    weatherText.textContent = data["current"]["condition"]["text"];
+  };
+
   // internal calls
   _listeners();
 
