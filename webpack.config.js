@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development", // production
+  mode: "production", // production
   entry: {
     script: path.resolve(__dirname, "src/script.js"),
   },
@@ -12,7 +12,17 @@ module.exports = {
   },
   // loaders
   module: {
-    rules: [{ test: /\.css$/, use: ["style-loader", "css-loader"] }],
+    rules: [
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      {
+        test: /\.(gif|png)$/,
+        type: "asset/resource",
+        generator: {
+          // keep original filenames and copy images to `dist/img/`
+          filename: "img/[name][ext]",
+        },
+      },
+    ],
   },
 
   // plugins
