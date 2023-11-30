@@ -47,17 +47,24 @@ export default function DOM() {
   };
 
   const _handleHourlyForecast = (event) => {
+    const forecastDisplay = doc.querySelector(".forecast");
     const daily = doc.querySelectorAll(".group.daily");
     const hourly = doc.querySelectorAll(".group.hourly");
+
     daily.forEach((item) => item.classList.add("hide"));
     hourly.forEach((item) => item.classList.remove("hide"));
+    forecastDisplay.classList.remove("daily");
+    forecastDisplay.classList.add("hourly");
   };
 
   const _handleDailyForecast = (event) => {
+    const forecastDisplay = doc.querySelector(".forecast");
     const daily = doc.querySelectorAll(".group.daily");
     const hourly = doc.querySelectorAll(".group.hourly");
     daily.forEach((item) => item.classList.remove("hide"));
     hourly.forEach((item) => item.classList.add("hide"));
+    forecastDisplay.classList.add("daily");
+    forecastDisplay.classList.remove("hourly");
   };
 
   // support functions
@@ -191,6 +198,8 @@ export default function DOM() {
       tempL.textContent = `L: ${Math.floor(array["day"]["mintemp_c"])}°`;
       condition.src = array["day"]["condition"]["icon"];
       condition.classList.add("forecast-img");
+      tempH.classList.add("metric-name");
+      tempL.classList.add("metric-name");
 
       day.classList.add("day");
       group.classList.add("group", "daily");
@@ -218,10 +227,11 @@ export default function DOM() {
       hour.textContent = time;
       tempAvg.textContent = `${Math.floor(segment["temp_c"])}°`;
       condition.src = segment["condition"]["icon"];
-      condition.classList.add("forecast-img");
+      condition.classList.add("forecast-img", "hourly");
 
       hour.classList.add("day");
       group.classList.add("group", "hourly", "hide");
+      tempAvg.classList.add("metric-name");
 
       group.append(hour, tempAvg, condition);
       forecast.appendChild(group);
