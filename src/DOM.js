@@ -129,6 +129,36 @@ export default function DOM() {
     sunInfo.appendChild(text);
   };
 
+  const _setBaseState = (
+    searchColour,
+    errorColour,
+    overlay,
+    border,
+    background,
+    iconSrc,
+    time
+  ) => {
+    const root = document.documentElement;
+    sunInfo.innerHTML = "";
+    // isDay accessed from closure's lexical scope
+    bg.style.backgroundImage = `url(${
+      isDay
+        ? "./assets/backgrounds/day_hill.gif"
+        : "./assets/backgrounds/night_hill.gif"
+    })`;
+    root.style.setProperty("--search-colour", searchColour);
+    root.style.setProperty("--error-colour", errorColour);
+    root.style.setProperty("--overlay", overlay);
+    root.style.setProperty("--border", border);
+    root.style.setProperty("--background", background);
+    const sunImg = document.createElement("img");
+    sunImg.classList.add("img");
+    sunImg.src = iconSrc;
+    const text = document.createTextNode(time);
+    sunInfo.appendChild(sunImg);
+    sunInfo.appendChild(text);
+  };
+
   const _setCondition = (data) => {
     const weatherIcon = doc.querySelector("[data-weather-icon]");
     const weatherText = doc.querySelector("#weather-text");
