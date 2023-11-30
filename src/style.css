@@ -139,7 +139,7 @@ input#search {
 .btn,
 .group,
 .img {
-  background-color: rgba(52, 81, 101, 0.6);
+  /* background-color: rgba(52, 81, 101, 0.6); */
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 2px;
@@ -185,11 +185,22 @@ input#search {
 
 .forecast {
   /* border: 2px solid green; */
+  min-height: 7rem;
+}
+
+.forecast.daily {
   display: flex;
+  /* overflow: hidden; */
+}
+
+.forecast.hourly {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 1px;
+  overflow-y: hidden;
 }
 
 .group {
-  flex: 1;
   /* border: 2px solid rebeccapurple; */
   font-size: 1.3rem;
   padding: 3px 1rem;
@@ -214,7 +225,7 @@ input#search {
 .forecast-img {
   position: absolute;
   /* border: 2px solid red; */
-  transform: scale(0.5);
+  transform: scale(0.6);
   top: 1rem;
   right: 0;
 }
@@ -222,4 +233,23 @@ input#search {
 .day {
   font-size: 1.4rem;
   font-weight: bold;
+}
+
+.group.daily {
+  flex: 1;
+}
+
+.group.hourly {
+  border: 2px solid red;
+  min-width: 75px;
+}
+
+.forecast-img.hourly {
+  /* border: 2px solid blue; */
+  top: 0.25rem;
+  right: -1rem;
+}
+
+.hide {
+  display: none;
 }
