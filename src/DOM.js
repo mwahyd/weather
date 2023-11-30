@@ -22,9 +22,6 @@ export default function DOM() {
     // forecast display
     const dailyBtn = doc.querySelector("[data-daily]");
     const hourBtn = doc.querySelector("[data-hourly]");
-
-    // hourlyBtn.addEventListener("click", _handleHourlyForecast);
-    // dailyBtn.addEventListener("click", _handleDailyForecast);
     dailyBtn.addEventListener("click", _handleForecastDisplay.bind(null, true));
     hourBtn.addEventListener("click", _handleForecastDisplay.bind(null, false));
   };
@@ -45,28 +42,6 @@ export default function DOM() {
   const _getDefaultLocation = () => {
     Pubsub.publish("locationEntered", "london");
   };
-
-  // const _handleHourlyForecast = (event) => {
-  //   const forecastDisplay = doc.querySelector(".forecast");
-  //   const daily = doc.querySelectorAll(".group.daily");
-  //   const hourly = doc.querySelectorAll(".group.hourly");
-
-  //   daily.forEach((item) => item.classList.add("hide"));
-  //   hourly.forEach((item) => item.classList.remove("hide"));
-  //   forecastDisplay.classList.remove("daily");
-  //   forecastDisplay.classList.add("hourly");
-  // };
-
-  // const _handleDailyForecast = (event) => {
-  //   const forecastDisplay = doc.querySelector(".forecast");
-  //   const daily = doc.querySelectorAll(".group.daily");
-  //   const hourly = doc.querySelectorAll(".group.hourly");
-
-  //   daily.forEach((item) => item.classList.remove("hide"));
-  //   hourly.forEach((item) => item.classList.add("hide"));
-  //   forecastDisplay.classList.add("daily");
-  //   forecastDisplay.classList.remove("hourly");
-  // };
 
   const _handleForecastDisplay = (isDaily) => {
     const forecastDisplay = doc.querySelector(".forecast");
