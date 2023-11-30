@@ -34,11 +34,9 @@ export default function DOM() {
 
   const _getInput = () => {
     const searchInput = doc.querySelector("#search");
-    if (searchInput.value.trim().toLowerCase() === "") {
-      searchInput.value = "";
-      return;
-    }
-    Pubsub.publish("locationEntered", searchInput.value.trim().toLowerCase());
+    const locationValue = searchInput.value.trim().toLowerCase();
+    if (locationValue === "") return;
+    Pubsub.publish("locationEntered", locationValue);
     searchInput.value = "";
   };
 
