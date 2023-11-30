@@ -215,14 +215,10 @@ export default function DOM() {
 
   const _setForecastHourly = (data) => {
     const forecast = doc.querySelector("[data-forecast]");
-    console.log(data["forecast"]["forecastday"][0]["hour"]);
     data["forecast"]["forecastday"][0]["hour"].forEach((segment) => {
       const forecastTime = new Date(segment["time"]);
       const options = { hour: "numeric", minute: "numeric" };
       const time = forecastTime.toLocaleTimeString("en-GB", options);
-
-      console.log(segment["time"]);
-      console.log(time);
 
       const group = document.createElement("div");
       const hour = document.createElement("p");
