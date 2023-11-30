@@ -192,9 +192,6 @@ export default function DOM() {
       const options = { weekday: "long" };
       const dayWeek = date.toLocaleDateString("en-GB", options);
 
-      // console.log(array);
-      // console.log(dayWeek);
-
       const group = document.createElement("div");
       const day = document.createElement("p");
       const tempH = document.createElement("p");
@@ -246,7 +243,7 @@ export default function DOM() {
     });
   };
 
-  // internal calls
+  // initialise
   _listeners();
 
   return {
