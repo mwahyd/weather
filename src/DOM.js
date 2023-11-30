@@ -82,20 +82,6 @@ export default function DOM() {
     _setForecastHourly(data);
   };
 
-  // background handling
-  // const _setBackground = (data) => {
-  //   const background = doc.querySelector("[data-background]");
-  //   const sunInfo = doc.querySelector("[data-sun]");
-  //   const root = document.documentElement;
-  //   const sunImg = document.createElement("img");
-  //   sunImg.classList.add("icon");
-
-  //   const isDay = data["current"]["is_day"];
-  //   isDay
-  //     ? _setDayState(root, background, sunInfo, sunImg, data)
-  //     : _setNightState(root, background, sunInfo, sunImg, data);
-  // };
-
   const _setBackground = (data) => {
     const isDay = data["current"]["is_day"];
     isDay ? _setDayState(data) : _setNightState(data);
@@ -126,39 +112,6 @@ export default function DOM() {
       data["forecast"]["forecastday"][0]["astro"]["sunrise"]
     );
   };
-
-  // const _setDayState = (root, bg, sunInfo, sunImg, data) => {
-  //   sunInfo.innerHTML = "";
-  //   bg.style.backgroundImage = "url(./assets/backgrounds/day_hill.gif)";
-  //   root.style.setProperty("--search-colour", "#3d53b3");
-  //   root.style.setProperty("--error-colour", "#0008ff");
-  //   root.style.setProperty("--overlay", "#C9BA9E");
-  //   root.style.setProperty("--border", "#9C7F62");
-  //   root.style.setProperty("--background", "#9C7F62");
-  //   sunImg.src = "./assets/icons/sunset-icon.gif";
-  //   const text = document.createTextNode(
-  //     data["forecast"]["forecastday"][0]["astro"]["sunset"]
-  //   );
-  //   sunInfo.appendChild(sunImg);
-  //   sunInfo.appendChild(text);
-  // };
-
-  // const _setNightState = (root, bg, sunInfo, sunImg, data) => {
-  //   sunInfo.innerHTML = "";
-  //   bg.style.backgroundImage = "url(./assets/backgrounds/night_hill.gif)";
-  //   root.style.setProperty("--search-colour", "#FA9F05");
-  //   root.style.setProperty("--error-colour", "#D6B16F");
-  //   root.style.setProperty("--overlay", "#112830");
-  //   root.style.setProperty("--border", "#345166");
-  //   root.style.setProperty("--background", "#345166");
-  //   sunImg.src = "./assets/icons/sunrise-icon.gif";
-  //   const text = document.createTextNode(
-  //     data["forecast"]["forecastday"][0]["astro"]["sunrise"]
-  //   );
-  //   sunImg.classList.add("img");
-  //   sunInfo.appendChild(sunImg);
-  //   sunInfo.appendChild(text);
-  // };
 
   const _setBaseState = (
     isDay,
