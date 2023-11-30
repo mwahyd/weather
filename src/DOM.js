@@ -44,7 +44,7 @@ export default function DOM() {
   };
 
   const _handleForecastDisplay = (isDaily) => {
-    const forecastDisplay = doc.querySelector(".forecast");
+    const forecastDisplay = doc.querySelector("[data-forecast]");
     const daily = doc.querySelectorAll(".group.daily");
     const hourly = doc.querySelectorAll(".group.hourly");
 
@@ -57,6 +57,11 @@ export default function DOM() {
     forecastDisplay.classList.toggle("hourly", !isDaily);
   };
 
+  const _resetForecastDisplay = () => {
+    const forecastDisplay = doc.querySelector("[data-forecast]");
+    forecastDisplay.classList.remove("hourly");
+  };
+
   // support functions
   const _locationStatus = (status) => {
     const errorDiv = doc.querySelector("[data-error]");
@@ -66,6 +71,7 @@ export default function DOM() {
   };
 
   const _updateDOM = (data) => {
+    _resetForecastDisplay();
     _setBackground(data);
     _setCondition(data);
     _setLocationConditions(data);
@@ -88,7 +94,7 @@ export default function DOM() {
       "#C9BA9E",
       "#9C7F62",
       "#9C7F62",
-      "./assets/icons/sunset-icon.gif",
+      "../dist/img/sunset-icon.gif",
       data["forecast"]["forecastday"][0]["astro"]["sunset"]
     );
   };
@@ -101,7 +107,7 @@ export default function DOM() {
       "#112830",
       "#345166",
       "#345166",
-      "./assets/icons/sunrise-icon.gif",
+      "../dist/img/sunrise-icon.gif",
       data["forecast"]["forecastday"][0]["astro"]["sunrise"]
     );
   };
@@ -124,9 +130,7 @@ export default function DOM() {
     sunInfo.innerHTML = "";
 
     bg.style.backgroundImage = `url(${
-      isDay
-        ? "./assets/backgrounds/day_hill.gif"
-        : "./assets/backgrounds/night_hill.gif"
+      isDay ? "../dist/img/day_hill.gif" : "../dist/img/night_hill.gif"
     })`;
 
     root.style.setProperty("--search-colour", searchColour);
