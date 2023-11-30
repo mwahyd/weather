@@ -112,6 +112,10 @@ input#search {
   font-size: 1.3rem;
 }
 
+#sun > img {
+  margin-right: 0.5rem;
+}
+
 #temp-var {
   margin-top: -1.5rem;
 }
@@ -228,7 +232,7 @@ input#search {
 }
 
 .forecast-img.hourly {
-  top: 1rem;
+  top: 0.5rem;
   right: -1rem;
 }
 
