@@ -130,7 +130,7 @@ export default function DOM() {
     sunInfo.innerHTML = "";
 
     bg.style.backgroundImage = `url(${
-      isDay ? "../dist/img/day_hill.gif" : "../dist/img/night_hill.gif"
+      isDay ? "./img/day_hill.gif" : "./img/night_hill.gif"
     })`;
 
     root.style.setProperty("--search-colour", searchColour);
