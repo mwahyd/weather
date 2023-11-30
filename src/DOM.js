@@ -21,10 +21,12 @@ export default function DOM() {
 
     // forecast display
     const dailyBtn = doc.querySelector("[data-daily]");
-    const hourlyBtn = doc.querySelector("[data-hourly]");
+    const hourBtn = doc.querySelector("[data-hourly]");
 
-    hourlyBtn.addEventListener("click", _handleHourlyForecast);
-    dailyBtn.addEventListener("click", _handleDailyForecast);
+    // hourlyBtn.addEventListener("click", _handleHourlyForecast);
+    // dailyBtn.addEventListener("click", _handleDailyForecast);
+    dailyBtn.addEventListener("click", _handleForecastDisplay.bind(null, true));
+    hourBtn.addEventListener("click", _handleForecastDisplay.bind(null, false));
   };
 
   // handler functions
@@ -44,25 +46,40 @@ export default function DOM() {
     Pubsub.publish("locationEntered", "london");
   };
 
-  const _handleHourlyForecast = (event) => {
+  // const _handleHourlyForecast = (event) => {
+  //   const forecastDisplay = doc.querySelector(".forecast");
+  //   const daily = doc.querySelectorAll(".group.daily");
+  //   const hourly = doc.querySelectorAll(".group.hourly");
+
+  //   daily.forEach((item) => item.classList.add("hide"));
+  //   hourly.forEach((item) => item.classList.remove("hide"));
+  //   forecastDisplay.classList.remove("daily");
+  //   forecastDisplay.classList.add("hourly");
+  // };
+
+  // const _handleDailyForecast = (event) => {
+  //   const forecastDisplay = doc.querySelector(".forecast");
+  //   const daily = doc.querySelectorAll(".group.daily");
+  //   const hourly = doc.querySelectorAll(".group.hourly");
+
+  //   daily.forEach((item) => item.classList.remove("hide"));
+  //   hourly.forEach((item) => item.classList.add("hide"));
+  //   forecastDisplay.classList.add("daily");
+  //   forecastDisplay.classList.remove("hourly");
+  // };
+
+  const _handleForecastDisplay = (isDaily) => {
     const forecastDisplay = doc.querySelector(".forecast");
     const daily = doc.querySelectorAll(".group.daily");
     const hourly = doc.querySelectorAll(".group.hourly");
 
-    daily.forEach((item) => item.classList.add("hide"));
-    hourly.forEach((item) => item.classList.remove("hide"));
-    forecastDisplay.classList.remove("daily");
-    forecastDisplay.classList.add("hourly");
-  };
+    // remove "hide" class if false; add "hide" if true
+    daily.forEach((item) => item.classList.toggle("hide", !isDaily));
+    hourly.forEach((item) => item.classList.toggle("hide", isDaily));
 
-  const _handleDailyForecast = (event) => {
-    const forecastDisplay = doc.querySelector(".forecast");
-    const daily = doc.querySelectorAll(".group.daily");
-    const hourly = doc.querySelectorAll(".group.hourly");
-    daily.forEach((item) => item.classList.remove("hide"));
-    hourly.forEach((item) => item.classList.add("hide"));
-    forecastDisplay.classList.add("daily");
-    forecastDisplay.classList.remove("hourly");
+    // show daily if true; show hourly if false
+    forecastDisplay.classList.toggle("daily", isDaily);
+    forecastDisplay.classList.toggle("hourly", !isDaily);
   };
 
   // support functions
@@ -82,6 +99,7 @@ export default function DOM() {
     _setForecastHourly(data);
   };
 
+  // background handling
   const _setBackground = (data) => {
     const isDay = data["current"]["is_day"];
     isDay ? _setDayState(data) : _setNightState(data);
@@ -149,6 +167,7 @@ export default function DOM() {
     sunInfo.appendChild(text);
   };
 
+  // other setters
   const _setCondition = (data) => {
     const weatherIcon = doc.querySelector("[data-weather-icon]");
     const weatherText = doc.querySelector("#weather-text");
@@ -185,6 +204,7 @@ export default function DOM() {
     )}°`;
   };
 
+  // forecast display daily / hourly
   const _setForecastDays = (data) => {
     const forecast = doc.querySelector("[data-forecast]");
     forecast.innerHTML = "";
