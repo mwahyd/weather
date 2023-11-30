@@ -82,6 +82,7 @@ export default function DOM() {
     _setForecastHourly(data);
   };
 
+  // background handling
   const _setBackground = (data) => {
     const background = doc.querySelector("[data-background]");
     const sunInfo = doc.querySelector("[data-sun]");
@@ -90,15 +91,9 @@ export default function DOM() {
     sunImg.classList.add("icon");
 
     const isDay = data["current"]["is_day"];
-    console.log(isDay);
-    switch (isDay) {
-      case 1: // day
-        _setDayState(root, background, sunInfo, sunImg, data);
-        break;
-      case 0: // night
-        _setNightState(root, background, sunInfo, sunImg, data);
-        break;
-    }
+    isDay
+      ? _setDayState(root, background, sunInfo, sunImg, data)
+      : _setNightState(root, background, sunInfo, sunImg, data);
   };
 
   const _setDayState = (root, bg, sunInfo, sunImg, data) => {
