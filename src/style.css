@@ -60,20 +60,16 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  /* width: 100vw;
-  height: 100vh; */
   background-color: var(--_overlay);
 }
 
 #weather-text {
-  /* border: 2px solid red; */
   font-size: 1.8rem;
   margin-top: -1.5rem;
 }
 
 .search-box {
   margin: -0.5rem auto 2rem 4rem;
-  /* width: fit-content; */
 }
 
 .search.icon {
@@ -104,9 +100,7 @@ input#search {
 }
 
 /* metric boxes */
-
 .content {
-  /* border: 2px solid red; */
   font-size: 2.3rem;
   font-weight: 600;
   padding: 1rem;
@@ -119,12 +113,10 @@ input#search {
 }
 
 #temp-var {
-  /* border: 2px solid red; */
   margin-top: -1.5rem;
 }
 
 #temp {
-  /* border: 2px solid orange; */
   font-size: 5rem;
 }
 
@@ -139,18 +131,13 @@ input#search {
 .btn,
 .group,
 .img {
-  /* background-color: rgba(52, 81, 101, 0.6); */
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 2px;
-  /* color: black; */
 }
 
 .box {
   flex: 1;
-  /* background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  padding: 2px; */
   display: flex;
   align-items: center;
 }
@@ -178,24 +165,19 @@ input#search {
 }
 
 /* forecast display */
-
 .forecast-display,
 .metrics {
   padding: 5px;
-  /* border: 2px solid yellow; */
 }
 
 .forecast {
-  /* border: 2px solid green; */
   min-height: 7rem;
 }
 
 .forecast.daily {
   display: flex;
-  /* overflow: hidden; */
 }
 
-/*  */
 .forecast.hourly {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
@@ -204,7 +186,6 @@ input#search {
 }
 
 .group {
-  /* border: 2px solid rebeccapurple; */
   font-size: 1.3rem;
   padding: 3px 1rem;
   margin-right: 1rem;
@@ -227,10 +208,7 @@ input#search {
 
 .forecast-img {
   position: absolute;
-  /* border: 2px solid red; */
   transform: scale(0.6);
-  /* top: 1rem;
-  right: 0; */
   top: 2rem;
   right: -1.2rem;
 }
@@ -245,13 +223,11 @@ input#search {
 }
 
 .group.hourly {
-  /* border: 2px solid red; */
   min-width: 80px;
   margin-bottom: 1rem;
 }
 
 .forecast-img.hourly {
-  /* border: 2px solid blue; */
   top: 1rem;
   right: -1rem;
 }
