@@ -94,7 +94,7 @@ export default function DOM() {
       "#C9BA9E",
       "#9C7F62",
       "#9C7F62",
-      "../dist/img/sunset-icon.gif",
+      "/img/sunset-icon.gif",
       data["forecast"]["forecastday"][0]["astro"]["sunset"]
     );
   };
@@ -107,7 +107,7 @@ export default function DOM() {
       "#112830",
       "#345166",
       "#345166",
-      "../dist/img/sunrise-icon.gif",
+      "/img/sunrise-icon.gif",
       data["forecast"]["forecastday"][0]["astro"]["sunrise"]
     );
   };
@@ -191,7 +191,7 @@ export default function DOM() {
 
     data["forecast"]["forecastday"].forEach((array) => {
       const date = new Date(array["date"]);
-      if (date.getDate() === today) return;
+      // if (date.getDate() === today) return;
 
       const options = { weekday: "long" };
       const dayWeek = date.toLocaleDateString("en-GB", options);
