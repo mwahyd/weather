@@ -21,6 +21,12 @@ Methods:
 - use ES6: modules to partition the code
 - fetch data asynchronously
 
+Credits:
+
+- Night background: Yup Nguyen [Dribble](https://dribbble.com/shots/2273454-Night-Hill-Animated)
+- Day background: Harry Nesbitt [Dribble](https://dribbble.com/shots/1687357-All-was-calm-on-the-mountainside)
+- Weather icons: [icons8](https://icons8.com/icon/set/weather/windows--animated?utm_source=dribbble&utm_medium=social&utm_campaign=weather-app)
+
 ![Screenshot!](screenshot1.png)
 ![Screenshot!](screenshot2.png)
 ![Screenshot!](screenshot3.png)
