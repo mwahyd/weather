@@ -94,7 +94,7 @@ export default function DOM() {
       "#C9BA9E",
       "#9C7F62",
       "#9C7F62",
-      "/img/sunset-icon.gif",
+      "./img/sunset-icon.gif",
       data["forecast"]["forecastday"][0]["astro"]["sunset"]
     );
   };
@@ -107,7 +107,7 @@ export default function DOM() {
       "#112830",
       "#345166",
       "#345166",
-      "/img/sunrise-icon.gif",
+      "./img/sunrise-icon.gif",
       data["forecast"]["forecastday"][0]["astro"]["sunrise"]
     );
   };
