@@ -5,8 +5,8 @@ import fogIco from "./assets/icons/fog.png";
 import humiIco from "./assets/icons/humi-icon.gif";
 import rainIco from "./assets/icons/rain-icon.gif";
 import rfIco from "./assets/icons/rf-icon.gif";
-import sunriseIco from "./assets/icons/sunrise-icon.gif";
-import sunsetIco from "./assets/icons/sunset-icon.gif";
+import sunriseIco from "./assets/icons/sunrise.gif";
+import sunsetIco from "./assets/icons/sunset.gif";
 import windIco from "./assets/icons/wind-icon.gif";
 
 import DOM from "./DOM.js";
