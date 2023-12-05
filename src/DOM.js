@@ -187,13 +187,13 @@ export default function DOM() {
   const _setForecastDays = (data) => {
     const forecast = doc.querySelector("[data-forecast]");
     forecast.innerHTML = "";
-    const today = new Date().getDate();
+    // const today = new Date().getDate();
 
     data["forecast"]["forecastday"].forEach((array) => {
       const date = new Date(array["date"]);
       // if (date.getDate() === today) return;
 
-      const options = { weekday: "long" };
+      const options = { weekday: "short" };
       const dayWeek = date.toLocaleDateString("en-GB", options);
 
       const group = document.createElement("div");
