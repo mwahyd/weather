@@ -193,7 +193,7 @@ export default function DOM() {
       const date = new Date(array["date"]);
       // if (date.getDate() === today) return;
 
-      const options = { weekday: "short" };
+      const options = { weekday: "long" };
       const dayWeek = date.toLocaleDateString("en-GB", options);
 
       const group = document.createElement("div");
